@@ -20,11 +20,12 @@ export class Environemnt {
     return this.get('NODE_ENV', 'development') === 'development';
   }
 
-  public mongoURI() {
+  public get mongoURI() {
     return this.get(envEnum.mongo_uri);
   }
 
   private get(key: string, defaultValue?: string) {
+    console.log('🚀 ~ Environemnt ~ get ~ this.config:', this.config);
     const value = this.config.get(key) || defaultValue;
     if (value) {
       return value;
