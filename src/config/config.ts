@@ -12,11 +12,11 @@ export class Environemnt {
     this.config = new ConfigService();
   }
 
-  public isProduction() {
+  public get isProduction() {
     return this.get('NODE_ENV', 'development') === 'production';
   }
 
-  public isDevelopment() {
+  public get isDevelopment() {
     return this.get('NODE_ENV', 'development') === 'development';
   }
 
@@ -25,7 +25,6 @@ export class Environemnt {
   }
 
   private get(key: string, defaultValue?: string) {
-    console.log('🚀 ~ Environemnt ~ get ~ this.config:', this.config);
     const value = this.config.get(key) || defaultValue;
     if (value) {
       return value;

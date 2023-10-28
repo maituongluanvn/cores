@@ -1,6 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 
-@Controller('incomes')
+const name = 'incomes';
+
+@ApiTags(name)
+@Controller(name)
 export class IncomesController {
   @Get()
   findByParams(): string {
