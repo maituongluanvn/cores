@@ -33,9 +33,9 @@
     "incremental": true,
     "paths": {
       "@env": ["src/env"],
-      "@core/*": ["src/core/*"],
       "@models/*": ["src/models/*"],
       "@modules/*": ["src/modules/*"],
+      "@src/*": ["src/*"],
       "@utils/*": ["src/utils/*"]
     },
     "typeRoots": ["node_modules/@types", "../../node_modules/@types"]
