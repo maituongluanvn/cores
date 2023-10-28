@@ -33,7 +33,7 @@
     "incremental": true,
     "paths": {
       "@env": ["src/env"],
-      "@models/*": ["src/models/*"],
+      "@schemas/*": ["src/schemas/*"],
       "@modules/*": ["src/modules/*"],
       "@src/*": ["src/*"],
       "@utils/*": ["src/utils/*"]
