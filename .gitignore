@@ -36,3 +36,9 @@ lerna-debug.log*
 !.vscode/extensions.json
 
 .env
+
+# turbo
+.turbo
+
+# yarn
+.yarn
