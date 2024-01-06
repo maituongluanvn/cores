@@ -11,7 +11,7 @@ export class Income {
   @Prop({ required: true })
   amount: string;
 
-  @Prop({ required: true })
+  @Prop({ required: true, ref: 'currenciesType' })
   currency: string;
 
   @Prop({ required: true })
