@@ -8,17 +8,17 @@ import env from '@config';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
 
-  app.setGlobalPrefix('core/api');
+  app.setGlobalPrefix('backend/api/v1');
 
   if (env.isDevelopment) {
     const config = new DocumentBuilder()
-      .setTitle('Core API')
-      .setDescription('Core API')
+      .setTitle('Backend API')
+      .setDescription('Backend API')
       .setVersion(process.env.npm_package_version)
       // .addTag('cats')
       .build();
     const document = SwaggerModule.createDocument(app, config);
-    SwaggerModule.setup('core/api/swagger', app, document);
+    SwaggerModule.setup('backend/api/swagger', app, document);
   }
 
   await app.listen(8888, () => {
