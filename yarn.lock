@@ -497,6 +497,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cores/backend@workspace:apps/backend"
   dependencies:
+    "@cores/definition": "workspace:^"
     "@nestjs/cli": ^10.0.0
     "@nestjs/common": ^10.0.0
     "@nestjs/config": ^3.1.1
@@ -527,6 +528,22 @@ __metadata:
     ts-node: ^10.9.1
     tsconfig-paths: ^4.2.0
     typescript: ^5.1.3
+  languageName: unknown
+  linkType: soft
+
+"@cores/definition@workspace:^, @cores/definition@workspace:packages/definition":
+  version: 0.0.0-use.local
+  resolution: "@cores/definition@workspace:packages/definition"
+  dependencies:
+    "@typescript-eslint/eslint-plugin": ^6.11.0
+    "@typescript-eslint/parser": ^6.11.0
+    "@vercel/style-guide": ^5.1.0
+    class-transformer: ^0.5.1
+    class-validator: ^0.14.1
+    eslint-config-prettier: ^9.0.0
+    eslint-config-turbo: ^1.10.12
+    eslint-plugin-only-warn: ^1.1.0
+    typescript: ^5.2.2
   languageName: unknown
   linkType: soft
 
@@ -1630,6 +1647,13 @@ __metadata:
   dependencies:
     "@types/superagent": "*"
   checksum: 2fc998ea698e0467cdbe3bea0ebce2027ea3a45a13e51a6cecb0435f44b486faecf99c34d8702d2d7fe033e6e09fdd2b374af52ecc8d0c69a1deec66b8c0dd52
+  languageName: node
+  linkType: hard
+
+"@types/validator@npm:^13.11.8":
+  version: 13.11.8
+  resolution: "@types/validator@npm:13.11.8"
+  checksum: 9e8e8a0e95c3acac60e740d10729076e810350a5975523560c0232bb3c414f381fb7f246405fda3454db694fa5a1c0f00d7e9070023a078abee036b8d7b67770
   languageName: node
   linkType: hard
 
@@ -2848,6 +2872,24 @@ __metadata:
   version: 1.2.3
   resolution: "cjs-module-lexer@npm:1.2.3"
   checksum: 5ea3cb867a9bb609b6d476cd86590d105f3cfd6514db38ff71f63992ab40939c2feb68967faa15a6d2b1f90daa6416b79ea2de486e9e2485a6f8b66a21b4fb0a
+  languageName: node
+  linkType: hard
+
+"class-transformer@npm:^0.5.1":
+  version: 0.5.1
+  resolution: "class-transformer@npm:0.5.1"
+  checksum: f191c8b4cc4239990f5efdd790cabdd852c243ed66248e39f6616a349c910c6eed2d9fd1fbf7ee6ea89f69b4f1d0b493b27347fe0cd0ae26b47c3745a805b6d3
+  languageName: node
+  linkType: hard
+
+"class-validator@npm:^0.14.1":
+  version: 0.14.1
+  resolution: "class-validator@npm:0.14.1"
+  dependencies:
+    "@types/validator": ^13.11.8
+    libphonenumber-js: ^1.10.53
+    validator: ^13.9.0
+  checksum: bea808145c81ba3b185e1174d92f97a2d6ffef0558261217042552e9027222eadb9a9731a4418a07eaaa72ac334347df7a1079ff48eaadaa3ee6848a6a88995c
   languageName: node
   linkType: hard
 
@@ -6082,6 +6124,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"libphonenumber-js@npm:^1.10.53":
+  version: 1.10.53
+  resolution: "libphonenumber-js@npm:1.10.53"
+  checksum: e8376a344c799f03b1b499075068a937dcc7d77c9bee9df860095bf7c74a025c27a6d298971893320c8f2874b19094fa50f25fc24fc8a6ca36a9edd6aafb0945
+  languageName: node
+  linkType: hard
+
 "lines-and-columns@npm:^1.1.6":
   version: 1.2.4
   resolution: "lines-and-columns@npm:1.2.4"
@@ -8918,6 +8967,13 @@ __metadata:
     spdx-correct: ^3.0.0
     spdx-expression-parse: ^3.0.0
   checksum: 35703ac889d419cf2aceef63daeadbe4e77227c39ab6287eeb6c1b36a746b364f50ba22e88591f5d017bc54685d8137bc2d328d0a896e4d3fd22093c0f32a9ad
+  languageName: node
+  linkType: hard
+
+"validator@npm:^13.9.0":
+  version: 13.11.0
+  resolution: "validator@npm:13.11.0"
+  checksum: d1e0c27022681420756da25bc03eb08d5f0c66fb008f8ff02ebc95812b77c6be6e03d3bd05cf80ca702e23eeb73dadd66b4b3683173ea2a0bc7cc72820bee131
   languageName: node
   linkType: hard
 

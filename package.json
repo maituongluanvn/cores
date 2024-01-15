@@ -6,9 +6,11 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
+    "build:packages": "turbo run build",
     "build:ci": "turbo run build:ci",
     "testunit": "turbo run testunit",
-    "dev": "turbo run dev --filter=@cores/backend...",
+    "dev": "turbo run dev",
+    "dev:backend": "turbo run dev --filter=@cores/backend...",
     "lint": "turbo run lint"
   },
   "devDependencies": {
@@ -26,7 +28,7 @@
   "license": "MIT",
   "engines": {
     "yarn": "3.2.0",
-    "node": "14.18.3",
+    "node": "^18.19.0",
     "npm": "Use yarn instead"
   },
   "packageManager": "yarn@3.2.0"
