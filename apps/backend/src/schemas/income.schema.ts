@@ -1,27 +1,11 @@
-import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
+import { TransactionDto } from '@cores/definition';
 
-export type IncomeDocument = HydratedDocument<Income>;
+export type IncomeDocument = HydratedDocument<TransactionDto>;
 
 @Schema({ timestamps: true, collection: 'incomes' })
-export class Income {
-  @Prop({ required: true })
-  description: string;
-
-  @Prop({ required: true })
-  amount: string;
-
-  @Prop({ required: true, ref: 'currenciesType' })
-  currency: string;
-
-  @Prop({ required: true })
-  spentedAt: Date;
-
-  @Prop({ required: true })
-  by: string;
-
-  @Prop({ required: true, ref: 'spentType' })
-  typeOfIncome: string;
-}
+// let Income = Object.assign(Object.create(Object.getPrototypeOf(TransactionDto)), TransactionDto)
+export class Income extends TransactionDto {}
 
 export const IncomeSchema = SchemaFactory.createForClass(Income);
