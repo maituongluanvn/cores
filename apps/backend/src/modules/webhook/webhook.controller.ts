@@ -1,6 +1,6 @@
 import { Controller, Post, Body } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
-// import { TransactionDto } from '@cores/definition';
+import { TelegramBodyDto } from '@cores/definition';
 import { Transaction } from '@schemas/transaction.schema';
 // import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
@@ -14,7 +14,7 @@ export class WebhookController {
   // constructor(@InjectModel(Transaction.name) private m: Model<Transaction>) {}
 
   @Post()
-  createTransaction(@Body() createCatDto: any): string {
+  createTransaction(@Body() createCatDto: TelegramBodyDto): string {
     console.log('🚀 ~ WebhookController ~ createTransaction ~ createCatDto:', createCatDto);
     return 'This action returns all cats';
   }
