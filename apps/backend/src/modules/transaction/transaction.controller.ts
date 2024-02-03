@@ -4,9 +4,8 @@ import { TransactionDto } from '@cores/definition';
 import { Transaction } from '@schemas/transaction.schema';
 import { Injectable } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
-import { connector } from '@telegram/connector';
+// import { connector } from '@telegram/connector';
 import { Model } from 'mongoose';
-
 const name = 'transaction';
 
 @ApiTags(name)
@@ -16,7 +15,6 @@ export class TransactionController {
 
   @Post()
   createTransaction(): string {
-    connector();
     return 'This action returns all cats';
   }
 }

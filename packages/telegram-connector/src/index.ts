@@ -2,9 +2,9 @@ import { TelegramClient } from "telegram";
 import { StringSession } from "telegram/sessions";
 import input from "input";
 
-const apiId = 123456;
-const apiHash = "123456abcdfg";
-const stringSession = new StringSession(""); // fill this later with the value from session.save()
+const apiId = 25138602;
+const apiHash = "e56be2f498cb1fcb2ef93f9f4d650e71";
+const stringSession = new StringSession("asdasd"); // fill this later with the value from session.save()
 
 export async function connector(){
   console.log("Loading interactive example...");
