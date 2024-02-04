@@ -5,10 +5,10 @@ import { IsNotEmpty } from 'class-validator';
 // https://core.telegram.org/bots/api#message
 
 export enum MessageEntityType {
-  'mention',
-  'hashtag',
-  'cashtag',
-  'bot_command',
+  mention = 'mention',
+  hashtag = 'hashtag',
+  cashtag = 'cashtag',
+  bot_command = 'bot_command',
 }
 
 export type MessageEntity = {
@@ -41,7 +41,7 @@ export class MessageDto {
   @Prop()
   text: string;
 
-  entities: MessageEntity;
+  entities: MessageEntity[];
 }
 
 export class TelegramBodyDto {

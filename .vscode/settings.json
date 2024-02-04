@@ -19,5 +19,5 @@
       "source.fixAll.eslint": "explicit"
     }
   },
-  "cSpell.words": ["nestjs"]
+  "cSpell.words": ["cashtag", "nestjs"]
 }
