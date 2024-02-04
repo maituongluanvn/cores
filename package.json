@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "build:packages": "turbo run build --filter=@cores/definition...",
+    "build:packages": "turbo run build --filter=@cores/definition --filter=@cores/botkit",
     "build:ci": "turbo run build:ci",
     "testunit": "turbo run testunit",
     "dev": "turbo run dev",
