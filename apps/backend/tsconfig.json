@@ -37,7 +37,7 @@
       "@middlewares/*": ["src/middlewares/*"],
       "@modules/*": ["src/modules/*"],
       "@src/*": ["src/*"],
-      "@utils/*": ["src/utils/*"]
+      "@common/*": ["src/common/*"]
     },
     "typeRoots": ["node_modules/@types", "../../node_modules/@types"]
   }
