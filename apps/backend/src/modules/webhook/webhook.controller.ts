@@ -8,20 +8,16 @@ import { WebhookService } from './webhook.service';
 // import { InjectModel } from '@nestjs/mongoose';
 // import { connector } from '@telegram/connector';
 // import { Model } from 'mongoose';
-import { ConfigService } from '@nestjs/config';
+
 const name = '/telegram/webhook';
 
 @ApiTags(name)
 @Controller(name)
 export class WebhookController {
-  constructor(
-    private readonly command: WebhookService,
-    private configSvc: ConfigService,
-  ) {}
+  constructor(private readonly command: WebhookService) {}
 
   @Post()
   createTransaction(@Body() telegramIncomingMsg: TelegramBodyDto): void {
-    console.log(this.configSvc.get<string>('telegramBotToken'));
     console.log(
       '🚀 ~ WebhookController ~ createTransaction ~ telegramIncomingMsg:',
       telegramIncomingMsg,
