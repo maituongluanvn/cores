@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { Logger, ValidationPipe, ValidationError, BadRequestException } from '@nestjs/common';
 
-import env from '@config';
+// import env from '@config';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -17,7 +17,7 @@ async function bootstrap() {
       },
     }),
   );
-  if (env.isDevelopment) {
+  if (process.env.NODE_ENV) {
     const config = new DocumentBuilder()
       .setTitle('Backend API')
       .setDescription('Backend API')

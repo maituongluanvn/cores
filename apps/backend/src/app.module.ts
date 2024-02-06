@@ -6,17 +6,20 @@ import OutcomesModule from './modules/outcomes/outcomes.module';
 import TransactionModule from './modules/transaction/transaction.module';
 import WebhookModule from './modules/webhook/webhook.module';
 import LoggerMiddleware from '@middlewares/logger.middleware';
+import configuration from './config/configuration';
+// import { TelegramInstance } from '@common/axios';
 @Module({
   imports: [
-    ConfigModule.forRoot({ isGlobal: true, cache: true }),
+    ConfigModule.forRoot({ load: [configuration], isGlobal: true, cache: true }),
     MongooseModule.forRoot(process.env.mongo_uri),
     IncomesModule,
     OutcomesModule,
     TransactionModule,
     WebhookModule,
+    // TelegramInstance,
   ],
   // controllers: [AppController],
-  // providers: [AppService],
+  // providers: [TelegramInstance],
 })
 export class AppModule implements NestModule {
   configure(consumer: MiddlewareConsumer): void {
