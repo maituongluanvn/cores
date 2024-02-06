@@ -8,30 +8,28 @@ import { WebhookService } from './webhook.service';
 // import { InjectModel } from '@nestjs/mongoose';
 // import { connector } from '@telegram/connector';
 // import { Model } from 'mongoose';
+import { ConfigService } from '@nestjs/config';
 const name = '/telegram/webhook';
 
 @ApiTags(name)
 @Controller(name)
 export class WebhookController {
-  constructor(private readonly command: WebhookService) {}
+  constructor(
+    private readonly command: WebhookService,
+    private configSvc: ConfigService,
+  ) {}
 
   @Post()
-  createTransaction(@Body() telegramIncomingMsg: TelegramBodyDto) {
+  createTransaction(@Body() telegramIncomingMsg: TelegramBodyDto): void {
+    console.log(this.configSvc.get<string>('telegramBotToken'));
     console.log(
       '🚀 ~ WebhookController ~ createTransaction ~ telegramIncomingMsg:',
       telegramIncomingMsg,
     );
-      const message = new Message(telegramIncomingMsg)
-      console.log("🚀 ~ WebhookController ~ createTransaction ~ message:", message)
-    // const command = getBotCommand(telegramIncomingMsg);
-    // switch (command) {
-    //   case '/help':
-        this.command.help(message);
-      //   break;
-      // default:
-      //   break;
-    // }
-    // console.log('🚀 ~ WebhookController ~ createTransaction ~ command:', command);
-    return 'This action returns all cats';
+    const command = getBotCommand(telegramIncomingMsg);
+    if (typeof command === 'string') {
+      const message = new Message(telegramIncomingMsg);
+      this.command[`${command.replace('/', '')}`](message);
+    }
   }
 }
